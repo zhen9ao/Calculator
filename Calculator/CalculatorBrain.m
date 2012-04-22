@@ -65,8 +65,6 @@
         result = log([self popOperand]);
     }
     
-//    [self pushOperand:result];
-    
     return result;
 }
 

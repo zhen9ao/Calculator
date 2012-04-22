@@ -32,12 +32,14 @@
     NSString *digit = sender.currentTitle;
     if (self.userIsInTheMiddleOfEnteringANumber) {
         self.display.text = [self.display.text stringByAppendingString:digit];
-        if ([digit isEqualToString:@"."]) self.userIsEnteredPeriod = YES;
-    } else if (!self.userIsEnteredPeriod && [digit isEqualToString:@"."]) {
-        self.display.text = [self.display.text stringByAppendingFormat:digit];
-        self.userIsEnteredPeriod = YES;
-        self.userIsInTheMiddleOfEnteringANumber = YES;
-    } else {
+//        if ([digit isEqualToString:@"."]) self.userIsEnteredPeriod = YES;
+    } 
+//    else if (!self.userIsEnteredPeriod && [digit isEqualToString:@"."]) {
+//        self.display.text = [self.display.text stringByAppendingFormat:digit];
+//        self.userIsEnteredPeriod = YES;
+//        self.userIsInTheMiddleOfEnteringANumber = YES;
+//    } 
+    else {
         self.display.text = digit;
         self.userIsInTheMiddleOfEnteringANumber = YES;
     }
