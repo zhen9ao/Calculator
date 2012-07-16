@@ -70,7 +70,6 @@
     
     while (stack.count > 0) {
         [expressionArray insertObject:[self deBracket:[self descriptioOfTopOfStack:stack]] atIndex:0];
-//        [expressionArray addObject:[self deBracket:[self descriptioOfTopOfStack:stack]]];
     }
     
     return [expressionArray componentsJoinedByString:@","];

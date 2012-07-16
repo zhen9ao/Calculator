@@ -33,8 +33,6 @@
 
 - (void)appendToCalculation:(NSString *)text 
 {
-//    self.calculation.text = [self.calculation.text stringByReplacingOccurrencesOfString:@" =" withString:@""];
-//    self.calculation.text = [self.calculation.text stringByAppendingFormat:@"%@ ", text];
     self.calculation.text = [CalculatorBrain descriptionOfProgram:self.brain.program];
 }
 
@@ -100,7 +98,6 @@
 - (IBAction)enterPressed
 {
     [self.brain pushOperand:[self.display.text doubleValue]];
-//    [self appendToCalculation:self.display.text];
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.userIsEnteredPeriod = NO;
     [self synchronizeView];
