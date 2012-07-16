@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CalculatorViewController.h"
 
 @interface CalculatorAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) CalculatorViewController *viewController;
 
 @end

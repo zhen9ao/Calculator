@@ -11,4 +11,6 @@
 @interface CalculatorViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
+@property (weak, nonatomic) IBOutlet UILabel *calculation;
+@property (weak, nonatomic) IBOutlet UILabel *variables;
 @end
