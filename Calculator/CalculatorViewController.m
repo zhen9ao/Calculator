@@ -11,7 +11,6 @@
 
 @interface CalculatorViewController ()
 @property (nonatomic) BOOL userIsInTheMiddleOfEnteringANumber;
-@property (nonatomic) BOOL userIsEnteredPeriod;
 @property (nonatomic, strong) CalculatorBrain *brain;
 @property (nonatomic, strong) NSDictionary *testVariableValues;
 @end
@@ -22,7 +21,6 @@
 @synthesize variables = _variables;
 @synthesize userIsInTheMiddleOfEnteringANumber = _userIsInTheMiddleOfEnteringANumber;
 @synthesize brain = _brain;
-@synthesize userIsEnteredPeriod = _userIsEnteredPeriod;
 @synthesize testVariableValues = _testVariableValues;
 
 - (CalculatorBrain *)brain
@@ -91,7 +89,6 @@
 {
     if (self.userIsInTheMiddleOfEnteringANumber) [self enterPressed];
     [self.brain pushOperation:sender.currentTitle];
-    self.userIsEnteredPeriod = YES;
     [self synchronizeView];
 }
 
@@ -99,7 +96,6 @@
 {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userIsInTheMiddleOfEnteringANumber = NO;
-    self.userIsEnteredPeriod = NO;
     [self synchronizeView];
 }
 
