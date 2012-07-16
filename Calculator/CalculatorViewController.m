@@ -40,9 +40,10 @@
 
 - (void)synchronizeView
 {
-    double result = [CalculatorBrain runProgram:self.brain.program usingVariableValues:self.testVariableValues];
+    id result = [CalculatorBrain runProgram:self.brain.program usingVariableValues:self.testVariableValues];
     
-    self.display.text = [NSString stringWithFormat:@"%g", result];
+    if ([result isKindOfClass:[NSNumber class]]) self.display.text = [NSString stringWithFormat:@"%g", [result doubleValue]];
+    else self.display.text = result;
     
     self.calculation.text = [CalculatorBrain descriptionOfProgram:self.brain.program];
     
